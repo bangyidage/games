@@ -4,7 +4,6 @@ import com.npb.pojo.User;
 
 import java.util.List;
 
-public interface UserDao {
+public interface UserMapper {
     List<User> getUserList();
-
 }

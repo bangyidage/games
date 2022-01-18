@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.npb.dao.UserDao">
+<mapper namespace="com.npb.dao.UserMapper">
     <select id="getUserList" resultType="com.npb.pojo.User">
         select * from news.user
     </select>
