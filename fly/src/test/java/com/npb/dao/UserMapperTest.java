@@ -5,6 +5,7 @@ import com.npb.utils.MyBatisUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class UserMapperTest {
@@ -30,10 +31,20 @@ public class UserMapperTest {
         sqlSession.close();
     }
     @Test
+    public void getUserByIdMap(){
+        SqlSession sqlSession = MyBatisUtils.getSqlSession();
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        HashMap<String, Object> map =  new HashMap<String, Object>();
+        map.put("id", 2);
+        User user = userMapper.getUserByIdMap(map);
+        sqlSession.commit();
+        sqlSession.close();
+    }
+    @Test
     public void addUser(){
         SqlSession sqlSession = MyBatisUtils.getSqlSession();
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-        int res = userMapper.addUser(new User(1, "猪八戒", "一耙"));
+        int res = userMapper.addUser(new User(3, "孙悟空", "一棒"));
         if(res>0){
             System.out.println("success");
         }
@@ -61,6 +72,19 @@ public class UserMapperTest {
         if(res > 0){
             System.out.println("success");
         }
+        sqlSession.commit();
+        sqlSession.close();
+    }
+
+    @Test
+    public void AddUserByMap(){
+        SqlSession sqlSession = MyBatisUtils.getSqlSession();
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        HashMap<String, Object> map =  new HashMap<String, Object>();
+        map.put("id", 6);
+        map.put("username", "人太懒");
+        map.put("password", "我组");
+        userMapper.addUserByMap(map);
         sqlSession.commit();
         sqlSession.close();
     }
