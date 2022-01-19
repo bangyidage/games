@@ -1,5 +1,8 @@
 package com.npb.pojo;
 
+import org.apache.ibatis.type.Alias;
+
+@Alias("UserBeanAlias")
 public class User {
     private int id;
     private String username;

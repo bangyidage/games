@@ -6,7 +6,7 @@
 <!--    <select id="getUserList" resultType="User">-->
 <!--        select * from news.user-->
 <!--    </select>-->
-    <select id="getUserList" resultType="User">
+    <select id="getUserList" resultType="UserBeanAlias">
         select * from news.user
     </select>
     <select id="getUserListLike" resultType="com.npb.pojo.User">
