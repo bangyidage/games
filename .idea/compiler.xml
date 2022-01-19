@@ -9,5 +9,8 @@
         <module name="fly" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="fly-01" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

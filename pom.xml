@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>fly</module>
+        <module>fly-01</module>
     </modules>
     <dependencies>
         <dependency>
