@@ -11,7 +11,7 @@ import java.util.List;
 public class UserMapperTest {
 
     @Test
-    public void test() {
+    public void getUserList() {
         SqlSession sqlSession = MyBatisUtils.getSqlSession();
 
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
