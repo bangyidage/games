@@ -6,6 +6,10 @@
     <select id="getUserList" resultType="com.npb.pojo.User">
         select * from news.user
     </select>
+
+    <select id="getUserListLike" resultType="com.npb.pojo.User">
+        select * from news.user where username like #{username}
+    </select>
     <select id="getUserById" parameterType="int" resultType="com.npb.pojo.User">
         select * from news.user where id = #{id}
     </select>

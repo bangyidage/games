@@ -40,6 +40,21 @@ public class UserMapperTest {
         sqlSession.commit();
         sqlSession.close();
     }
+
+
+    @Test
+    public void getUserListLike(){
+        SqlSession sqlSession = MyBatisUtils.getSqlSession();
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        List<User> userList = userMapper.getUserListLike("主持");
+        for (User user : userList) {
+            System.out.println(user);
+        }
+        sqlSession.commit();
+        sqlSession.close();
+    }
+
+
     @Test
     public void addUser(){
         SqlSession sqlSession = MyBatisUtils.getSqlSession();
@@ -55,7 +70,7 @@ public class UserMapperTest {
     public void modifyUser(){
         SqlSession sqlSession = MyBatisUtils.getSqlSession();
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-        int res = userMapper.modifyUser(new User(1, "妲己", "321"));
+        int res = userMapper.modifyUser(new User(1, "和平", "得到"));
         System.out.println(res);
         if(res > 0){
             System.out.println("success");
