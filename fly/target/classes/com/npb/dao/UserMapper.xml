@@ -6,4 +6,7 @@
     <select id="getUserList" resultType="com.npb.pojo.User">
         select * from news.user
     </select>
+    <select id="getUserByLimit" parameterType="map" resultType="com.npb.pojo.User">
+        select * from news.user limit #{startIndex}, #{pageSize}
+    </select>
 </mapper>
